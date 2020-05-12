@@ -9,11 +9,11 @@ def main():
     client = udp_client.UDPClient(ip, port)
 
     args = [0, 228, 123]
-    msg = OscMessageBuilder(address='/address')
-    msg.add_arg(args)
-    m = msg.build()
+    data = OscMessageBuilder(address='/address')
+    data.add_arg(args)
+    data = data.build()
 
-    client.send(m)
+    client.send(data)
 
 
 if __name__ == '__main__':
